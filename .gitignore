@@ -40,4 +40,4 @@ web/.vite/
 
 #secrets
 secrets/
-rendered_config/rendered_config/
+rendered_config/

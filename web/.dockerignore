@@ -11,6 +11,10 @@ build/
 .env.test.local
 .env.production.local
 
+#secrets
+secrets/
+rendered_config/
+
 # Testing
 coverage/
 .nyc_output/

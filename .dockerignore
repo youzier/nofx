@@ -37,12 +37,15 @@ decision_logs/
 coin_pool_cache/
 *.log
 
+
 # Config files (should be mounted)
 config.json
 
 # Web build artifacts (but include source for multi-stage build)
 web/node_modules/
 web/dist/
+secrets/
+rendered_config/
 
 # Temporary files
 tmp/

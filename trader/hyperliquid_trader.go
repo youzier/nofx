@@ -88,6 +88,15 @@ func (t *HyperliquidTrader) GetBalance() (map[string]interface{}, error) {
 	summaryJSON, _ := json.MarshalIndent(accountState.MarginSummary, "  ", "  ")
 	log.Printf("🔍 [DEBUG] Hyperliquid API CrossMarginSummary完整数据:")
 	log.Printf("%s", string(summaryJSON))
+	
+	// 🔍 调试：打印完整的账户状态（包括AssetPositions）
+	fullStateJSON, _ := json.MarshalIndent(accountState, "  ", "  ")
+	log.Printf("🔍 [DEBUG] Hyperliquid API 完整UserState响应:")
+	log.Printf("%s", string(fullStateJSON))
+	
+	// 🔍 调试：打印钱包地址信息
+	log.Printf("🔍 [DEBUG] 查询的钱包地址: %s", t.walletAddr)
+	log.Printf("🔍 [DEBUG] AssetPositions数量: %d", len(accountState.AssetPositions))
 
 	accountValue, _ := strconv.ParseFloat(accountState.MarginSummary.AccountValue, 64)
 	totalMarginUsed, _ := strconv.ParseFloat(accountState.MarginSummary.TotalMarginUsed, 64)
